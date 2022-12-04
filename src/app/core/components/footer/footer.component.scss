@@ -1,0 +1,21 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #04838f;
+  padding: 10px;
+  color: #fff;
+}
+
+a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+span{
+  margin: 0 10px;
+}
