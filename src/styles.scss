@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+$colour-primary: #04838f;
+$colour-primary-font: #6c6c6c;
+$colour-secondary-font: #000000;
+$colour-white: #fff;
+$colour-country-1: #956065;
+$colour-country-2: #793d52;
+$colour-country-3: #89a1db;
+$colour-country-4: #9780a1;
+$colour-country-5: #bfe0f1;
+$colour-country-6: #b8cbe7;
+
+* {
+  font-family: Montserrat, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+body,
+.body-highlight {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+.header {
+  font-size: 72px;
+}
+h1,
+h2 {
+  font-size: 24px;
+}
+h1,
+.header {
+  font-weight: 600;
+}
+.ylContainer{
+  min-height: calc(100vh - 120px);
+}
+.center {
+  width: 100vw;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Devices with a resolution of 500 pixels or less */
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 16px;
+    .body-highlight {
+      font-weight: 600;
+    }
+  }
+  .header {
+    font-size: 40px;
+  }
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+  h1,
+  .header {
+    font-weight: 600;
+  }
+  .ylContainer{
+    min-height: calc(100vh - 108px);
+  }
+  .center {   
+    min-height: calc(100vh - 130px);  
+  }
+}
+
