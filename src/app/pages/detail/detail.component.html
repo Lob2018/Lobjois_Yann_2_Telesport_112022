@@ -6,7 +6,7 @@
   ></app-relative-data>
 </div>
 <div class="container-data country">
-  <ngx-charts-line-chart *ngIf="olympic$ | async multi"
+  <ngx-charts-line-chart *ngIf="olympic$ | async as multi"
     [view]="view"
     [scheme]="colorScheme"
     [results]="multi"
