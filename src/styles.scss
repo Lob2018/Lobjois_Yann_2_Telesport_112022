@@ -23,7 +23,14 @@ body,
   font-size: 20px;
 }
 .header {
-  font-size: 72px;
+  font-size: 32px;
+  background-color: #04838f;
+  color: #fff;
+  width: fit-content;
+  padding: 0em 0.35em 0.1em 0.35em;
+  border: 2px #04838f solid;
+  border-radius: 0.25em;
+  margin: 2em auto 0.7em auto;
 }
 h1,
 h2 {
@@ -31,10 +38,10 @@ h2 {
 }
 h1,
 .header {
-  font-weight: 600;
+  font-weight: 300;
 }
-.ylContainer{
-  min-height: calc(100vh - 120px);
+.ylContainer {
+  min-height: calc(100vh - 164px);
 }
 .center {
   width: 100vw;
@@ -43,6 +50,20 @@ h1,
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.container-data {
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  flex-flow: row wrap;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.country {
+  gap: 1em;
 }
 
 /* Devices with a resolution of 500 pixels or less */
@@ -54,7 +75,7 @@ h1,
     }
   }
   .header {
-    font-size: 40px;
+    font-size: 28px;
   }
   h1,
   h2 {
@@ -64,11 +85,106 @@ h1,
   .header {
     font-weight: 600;
   }
-  .ylContainer{
-    min-height: calc(100vh - 108px);
+  .ylContainer {
+    min-height: calc(100vh - 145px);
   }
-  .center {   
-    min-height: calc(100vh - 130px);  
+  .center {
+    min-height: calc(100vh - 130px);
+  }
+  .container-data {
+    gap: 1em;
+    margin-bottom: 1em;
   }
 }
 
+.ngx-charts .pie-chart {
+  path {
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+  text.pie-label.animation {
+    font-size: 1em;
+    font-weight: 500;
+    color: #000;
+  }
+}
+.ngx-charts .line-chart {
+  .gridline-path {
+    stroke: #6c6c6c !important;
+  }
+  path {
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+  text {
+    font-weight: 400;
+    font-size: 1.5em !important;
+    fill: #6c6c6c !important;
+    transform: translateY(0.6em);
+  }
+  .x.axis .tick > text {
+    stroke-width: 0em;
+    font-weight: 500;
+    font-size: 0.9em !important;
+    transform: translateY(0.5em);
+  }
+  .y.axis .tick > text {
+    stroke-width: 0em;
+    font-weight: 500;
+    font-size: 0.9em !important;
+    transform: translateX(-0.3em);
+  }
+}
+
+ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+  .tooltip-caret.position-top {
+    border-top-color: $colour-primary;
+    border-width: 1.3em;
+    margin-top: -0.2em;
+    border-top: 2em solid $colour-primary;
+  }
+  .tooltip-caret.position-right {
+    border-right-color: $colour-primary;
+    border-width: 1.3em;
+    margin-left: -1em;
+    border-right: 2em solid $colour-primary;
+  }
+  .tooltip-caret.position-bottom {
+    border-bottom-color: $colour-primary;
+    border-bottom: 7px solid $colour-primary;
+    border-width: 1.3em;
+    margin-top: -0.6em;
+    border-bottom: 2em solid $colour-primary;
+  }
+  .tooltip-caret.position-left {
+    border-left-color: $colour-primary;
+    border-width: 1.3em;
+    margin-left: -0.5em;
+    border-left: 2em solid $colour-primary;
+  }
+  border-radius: 0.5em;
+  background-color: $colour-primary;
+  div {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    p {
+      font-size: 1.3em;
+      font-weight: 300;
+      &.model-name {
+        margin-top: 0.2em;
+        margin-bottom: 0em;
+      }
+      &.model-value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -0.2em;
+        margin-bottom: 0.1em;
+        font-size: 1.4em;
+      }
+      & strong {
+        font-size: 0.83em;
+      }
+    }
+  }
+}
