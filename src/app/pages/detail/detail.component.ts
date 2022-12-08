@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
-import { catchError, Observable, of, take, tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { LineChartData } from 'src/app/core/models/line-chart-data.model';
 import { Olympic } from 'src/app/core/models/olympic.model';
 import { DefaultChartData } from 'src/app/core/models/default-chart-data.model';
@@ -83,24 +83,12 @@ export class DetailComponent implements OnInit {
             this.multi = [{ name: data?.country, series: this.single }];
             this.olympic$ = of(this.multi);
             // the number of entries, medals and athletes
-            this.setNumberOfMedals(this.numberOfMedals);
-            this.setNumberOfAthletes(this.numberOfAthletes);
-            this.setNumberOfEntries(this.single.length);
-          } else if (!this.multi) {
-            console.log('vide');
+            this.dataNumberOfMedals.quantity = this.numberOfMedals;
+            this.dataNumberOfAthletes.quantity = this.numberOfAthletes;
+            this.dataNumberOfEntries.quantity = this.single.length;
           }
         })
       )
       .subscribe();
-  }
-
-  setNumberOfEntries(quantity: number) {
-    this.dataNumberOfEntries.quantity = quantity;
-  }
-  setNumberOfMedals(quantity: number) {
-    this.dataNumberOfMedals.quantity = quantity;
-  }
-  setNumberOfAthletes(quantity: number) {
-    this.dataNumberOfAthletes.quantity = quantity;
   }
 }

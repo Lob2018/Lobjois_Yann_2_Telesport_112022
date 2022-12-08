@@ -1,4 +1,4 @@
-<h1 class="header" *ngIf="multi && multi[0]?.name">{{multi[0].name}}</h1>
+<h1 class="header" *ngIf="multi && multi[0]?.name">{{ multi[0].name }}</h1>
 <div class="container-data country" *ngIf="dataNumberOfEntries.quantity">
   <app-relative-data
     *ngFor="let relativeData of relativeDataArray"
@@ -6,7 +6,8 @@
   ></app-relative-data>
 </div>
 <div class="container-data country">
-  <ngx-charts-line-chart *ngIf="olympic$ | async as multi"
+  <ngx-charts-line-chart
+    *ngIf="olympic$ | async as multi"
     [view]="view"
     [scheme]="colorScheme"
     [results]="multi"
@@ -20,4 +21,8 @@
     [timeline]="timeline"
   >
   </ngx-charts-line-chart>
+</div>
+<div class="center" *ngIf="!multi">
+  <h2>No corresponding country found</h2>
+  <a routerLink="">Go back</a>
 </div>
