@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
-import { take, tap } from 'rxjs';
+import { finalize, take, tap } from 'rxjs';
 import { LineChartData } from 'src/app/core/models/line-chart-data.model';
 import { Olympic } from 'src/app/core/models/olympic.model';
 import { DefaultChartData } from 'src/app/core/models/default-chart-data.model';
@@ -14,6 +14,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
+  loading: boolean = true;
   numberOfMedals: number = 0;
   numberOfAthletes: number = 0;
 
@@ -86,7 +87,8 @@ export class DetailComponent implements OnInit {
             this.dataNumberOfEntries.quantity = this.single.length;
           }
         }),
-        take(2)
+        take(2),
+        finalize(() => (this.loading = false))
       )
       .subscribe();
   }

@@ -188,3 +188,23 @@ ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
     }
   }
 }
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  top: calc(50% - 2.25rem);
+  left: calc(50% - 2.25rem);
+  border: 16px solid #04838f;
+  border-top: 16px solid #FFF;
+  border-radius: 50%;
+  animation: spinner 0.5s linear infinite;
+}

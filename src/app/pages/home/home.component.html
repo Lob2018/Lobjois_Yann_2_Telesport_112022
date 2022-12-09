@@ -1,4 +1,4 @@
-<h1 class="header" *ngIf="single.length > 0">Medals per Country</h1>
+<h1 class="header">Medals per Country</h1>
 <div class="container-data" *ngIf="dataNumberOfCountries.quantity">
   <app-relative-data
     *ngFor="let relativeData of relativeDataArray"
@@ -26,6 +26,7 @@
     </ng-template>
   </ngx-charts-pie-chart>
 </div>
-<div class="center" *ngIf="single.length === 0">
+<div class="loader" *ngIf="loading && single.length === 0"></div>
+<div class="center" *ngIf="!loading && single.length === 0">
   <h2>No countries found</h2>
 </div>
