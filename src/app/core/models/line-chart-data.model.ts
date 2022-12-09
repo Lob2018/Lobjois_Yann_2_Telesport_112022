@@ -1,6 +1,6 @@
 import { DefaultChartData } from './default-chart-data.model';
 
-export class LineChartData {    
+export interface LineChartData {
   name?: string;
-  series!: DefaultChartData[];
+  series: DefaultChartData[];
 }

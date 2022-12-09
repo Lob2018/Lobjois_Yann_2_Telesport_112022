@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, of, tap } from 'rxjs';
+import { Observable, of, take, tap } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 import { RelativeData } from 'src/app/core/models/relative-data.model';
@@ -12,7 +12,6 @@ import { DefaultChartData } from 'src/app/core/models/default-chart-data.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  olympics$!: Observable<DefaultChartData[]>;
   numberOfJos!: number[];
 
   dataNumberOfJOs: RelativeData = {
@@ -67,13 +66,14 @@ export class HomeComponent implements OnInit {
               this.numberOfJos.push(item.year);
             });
           });
-          this.olympics$ = of(this.single);
         }),
         // number of JOs and number of countries
         tap(() => {
           this.setNumberOfJos([...new Set(this.numberOfJos)].length);
           this.setNumberOfCountries(this.single.length);
-        })
+        }),
+        // the observable complete in 2 emissions
+        take(2)
       )
       .subscribe();
   }

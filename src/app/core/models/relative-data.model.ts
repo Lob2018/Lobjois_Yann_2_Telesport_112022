@@ -1,4 +1,4 @@
-export class RelativeData {
-  title!: string;
-  quantity!: number;
+export interface RelativeData {
+  title: string;
+  quantity: number;
 }

@@ -1,4 +1,4 @@
-<h1 class="header">Medals per Country</h1>
+<h1 class="header" *ngIf="single.length > 0">Medals per Country</h1>
 <div class="container-data" *ngIf="dataNumberOfCountries.quantity">
   <app-relative-data
     *ngFor="let relativeData of relativeDataArray"
@@ -6,7 +6,8 @@
   ></app-relative-data>
 </div>
 <div class="container-data">
-  <ngx-charts-pie-chart  *ngIf="olympics$ | async as single"
+  <ngx-charts-pie-chart
+    *ngIf="single.length > 0"
     [view]="view"
     [scheme]="colorScheme"
     [results]="single"
@@ -24,4 +25,7 @@
       </div>
     </ng-template>
   </ngx-charts-pie-chart>
+</div>
+<div class="center" *ngIf="single.length === 0">
+  <h2>No countries found</h2>
 </div>

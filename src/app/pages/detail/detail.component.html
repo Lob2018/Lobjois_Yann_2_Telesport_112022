@@ -7,7 +7,7 @@
 </div>
 <div class="container-data country">
   <ngx-charts-line-chart
-    *ngIf="olympic$ | async as multi"
+    *ngIf="multi.length > 0"
     [view]="view"
     [scheme]="colorScheme"
     [results]="multi"
@@ -22,7 +22,7 @@
   >
   </ngx-charts-line-chart>
 </div>
-<div class="center" *ngIf="!multi">
+<div class="center" *ngIf="multi.length === 0">
   <h2>No corresponding country found</h2>
   <a routerLink="">Go back</a>
 </div>

@@ -1,5 +1,5 @@
-export class DefaultChartData {
+export interface DefaultChartData {
   id?: number;
-  name!: string;
-  value!: number;
+  name: string;
+  value: number;
 }
