@@ -5,9 +5,8 @@
     [relativeData]="relativeData"
   ></app-relative-data>
 </div>
-<div class="container-data pie-chart">
+<div class="container-data pie-chart" *ngIf="single.length > 0">
   <ngx-charts-pie-chart
-    *ngIf="single.length > 0"
     [scheme]="colorScheme"
     [results]="single"
     [gradient]="gradient"
