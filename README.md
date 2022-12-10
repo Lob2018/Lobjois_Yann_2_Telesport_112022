@@ -1,6 +1,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
 
-# OlympicGamesStarter
+# OlympicGames
 
 ## Technologies
 
@@ -30,7 +30,7 @@ As you can see, an architecture has already been defined for the project. It is 
 
 I suggest you to start by understanding this starter code. Pay an extra attention to the `app-routing.module.ts` and the `olympic.service.ts`.
 
-Once mastered, you should continue by creating the typescript interfaces inside the `models` folder. As you can see I already created two files corresponding to the data included inside the `olympic.json`. With your interfaces, improve the code by replacing every `any` by the corresponding interface.
+Typescript interfaces are inside the `models` folder.
 
 ## Reference colors
 
@@ -62,6 +62,10 @@ Once mastered, you should continue by creating the typescript interfaces inside 
 | Header                    | Title 1                   | Title 2         | Body highlight            | Body            |
 | ------------------------- | ------------------------- | --------------- | ------------------------- | --------------- |
 | Montserrat Semi-bold 40px | Montserrat Semi-bold 20px | Montserrat 20px | Montserrat Semi-bold 16px | Opens Sans 16px |
+
+## Demo
+
+[OlympicGames on Netlify](https://telesport.netlify.app/)
 
 ## Contribute to the project
 
