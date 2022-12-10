@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
 
   // chart data
   single!: DefaultChartData[];
-  view: [number, number] = [innerWidth / 1.2, 400];
   gradient: boolean = false;
   showLegend: boolean = false;
   showLabels: boolean = true;

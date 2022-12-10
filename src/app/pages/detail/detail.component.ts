@@ -41,7 +41,6 @@ export class DetailComponent implements OnInit {
   // chart data
   single!: DefaultChartData[];
   multi!: LineChartData[];
-  view: [number, number] = [innerWidth / 1.2, 400];
   legend: boolean = false;
   showLabels: boolean = true;
   animations: boolean = true;

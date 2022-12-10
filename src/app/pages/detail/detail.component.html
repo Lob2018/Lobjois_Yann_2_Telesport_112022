@@ -5,10 +5,9 @@
     [relativeData]="relativeData"
   ></app-relative-data>
 </div>
-<div class="container-data country">
+<div class="container-data country line-chart">
   <ngx-charts-line-chart
     *ngIf="single && single.length > 0"
-    [view]="view"
     [scheme]="colorScheme"
     [results]="multi"
     [legend]="legend"
