@@ -1,0 +1,15 @@
+div {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 0.5em 0.9em 0.3em 0.9em;
+  border: 3px #04838f solid;
+  border-radius: 0.5em;
+  p {
+    &:first-of-type {
+      color: #6c6c6c;
+    }
+    width: auto;
+    margin: 0;
+  }
+}

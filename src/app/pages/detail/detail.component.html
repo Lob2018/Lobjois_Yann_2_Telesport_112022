@@ -1,0 +1,34 @@
+<h1 class="header" *ngIf="multi && multi[0]?.name">{{ multi[0].name }}</h1>
+<div class="container-data country" *ngIf="dataNumberOfEntries.quantity">
+  <app-relative-data
+    *ngFor="let relativeData of relativeDataArray"
+    [relativeData]="relativeData"
+  ></app-relative-data>
+</div>
+<div
+  class="container-data country charts"
+  *ngIf="single && single.length > 0"
+>
+  <ngx-charts-line-chart
+    [scheme]="colorScheme"
+    [results]="multi"
+    [legend]="legend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [timeline]="timeline"
+  >
+  </ngx-charts-line-chart>
+</div>
+<div class="loader" *ngIf="loading && !multi"></div>
+<div class="center" *ngIf="!loading && !multi">
+  <h2>No corresponding country found</h2>
+  <a routerLink="">Go back</a>
+</div>
+<div class="center" *ngIf="!loading && single?.length === 0">
+  <h2>No data found</h2>
+  <a routerLink="">Go back</a>
+</div>
